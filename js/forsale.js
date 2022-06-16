@@ -52,10 +52,6 @@ function addProduct() {
     }
 }
 
-addProduct()
-
-congrats()
-
 while (congratstext != "N") {
 
     switch (congratstext) {

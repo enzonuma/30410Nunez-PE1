@@ -1,11 +1,18 @@
-let minBid = 10
-let welcome = prompt("Welcome to Xclusive Shoes, whats your name?")
-let yourBid = parseInt(prompt(welcome + " what's your $Bid for those?"))
-let confirm = prompt("$" + yourBid + " your Final Bid? ('Yes' / 'No' to stop )")
+let minBid = 0
+let yourName = ""
+let yourBid = 0
+let confirmBid = ""
+let shippingZone = ""
 
 function toBuy() {
 
-    while (confirm != "No") {
+    minBid = 10
+    yourName = prompt(`"Welcome to Xclusive Shoes, whats your name?"`)
+    shippingZone = prompt(`Where are you from?: (CL - AR - PE - BO - UR)`)
+    yourBid = parseInt(prompt(`${yourName} what is your $Bid for these product?`))
+    confirmBid = prompt(`Is $${yourBid} your final Bid? ('YY' / 'NN' to stop )`)
+
+    while (confirmBid != "NN") {
 
         if (yourBid >= minBid) {
             alert("Those shoes are yours")
@@ -18,15 +25,15 @@ function toBuy() {
             alert("Please enter a $Bid or number")
         }
 
-        yourBid = parseInt(prompt(welcome + " try another $Bid:"))
-        confirm = prompt("$" + yourBid + " is your new Bid? (Yes / 'No' to stop)")
+        yourBid = parseInt(prompt(yourName + " try another $Bid:"))
+        confirmBid = prompt("$" + yourBid + " is your new Bid? (Yes / 'No' to stop)")
     }
 
     if (confirm != "No") {
         shippingCost()
         lastMessage = alert("Final cost $" + finalCost)
         despedida = alert("Thanks for visit us!")
-    
+
     } else {
         despedida = alert("Thanks for visit us!")
     }
@@ -42,8 +49,6 @@ let shippingFee = 0
 let finalCost = 0
 
 function shippingCost() {
-
-    shippingZone = prompt("Where are you from?: (CL - AR - PE - BO - UR)")
 
     switch (shippingZone) {
         case "CL":
@@ -83,6 +88,7 @@ function shippingCost() {
     }
 }
 
-debugger
-
-toBuy()
+const btnBuy = document.querySelector("#startBuy")
+btnBuy.addEventListener("click", () => {
+    toBuy()
+})
