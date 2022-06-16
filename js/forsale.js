@@ -2,13 +2,37 @@
 let myShoes = []
 let myClothes = []
 let myAcce = []
+let congratstext = ""
 
 function crearId() {
     return parseInt(Math.random() * 100)
 }
 
 function congrats() {
-    congratstext = prompt("Your products were added succesfully! Do you want to add another ones? (Y / N to close)")
+    congratstext = prompt("Your products were added succesfully! Do you want to add another ones? (YY / NN to close)")
+
+    while (congratstext != "NN") {
+        switch (congratstext) {
+            case "YY":
+                addProduct();
+                congrats();
+                break;
+
+            default:
+                alert("Please enter an option");
+                return congrats();
+                // congratstext = prompt("Your products were added! Do you want to add another ones? (Y / N to close");
+                // addProduct();
+                break;
+        }
+    }
+
+    if (congratstext == "NN") {
+        debugger
+        let thankYou = alert("Thank you for visit us! Here are your products, good luck!");
+        const allProducts = myShoes.concat(myClothes, myAcce);
+        console.table(allProducts);
+    }
 }
 
 function addProduct() {
@@ -46,29 +70,20 @@ function addProduct() {
             myAcce.push(new Producto(sku, productType, productName, minBid));
             break;
 
-        default :
+        default:
             alert("Enter a correct category");
             return addProduct();
     }
 }
 
-while (congratstext != "N") {
+const btnSell = document.querySelector("#yourSales")
+btnSell.addEventListener("click", () => {
+    addProduct()
+    congrats()
+})
 
-    switch (congratstext) {
-        case "Y" :
-            addProduct();
-            congrats();
-            break;
-
-        default :
-            alert("Please enter an option");
-            congrats = prompt("Your products were added! Do you want to add another ones? (Y / N to close");
-            addProduct();
-            break;
-    }
-
-} 
-
-let thankYou = alert("Thank you for visit us! Here are your products, good luck!")
-const allProducts = myShoes.concat(myClothes, myAcce)
-console.table(allProducts)
+// const btnSell = document.querySelector("#yourSales")
+// btnSell.addEventListener("click", () => {
+//     addProduct()
+//     congrats()
+// })
