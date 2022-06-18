@@ -28,7 +28,6 @@ function congrats() {
     }
 
     if (congratstext == "NN") {
-        debugger
         let thankYou = alert("Thank you for visit us! Here are your products, good luck!");
         const allProducts = myShoes.concat(myClothes, myAcce);
         console.table(allProducts);
@@ -81,9 +80,3 @@ btnSell.addEventListener("click", () => {
     addProduct()
     congrats()
 })
-
-// const btnSell = document.querySelector("#yourSales")
-// btnSell.addEventListener("click", () => {
-//     addProduct()
-//     congrats()
-// })

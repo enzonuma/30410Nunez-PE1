@@ -1,16 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <title>PreEntrega 1 - 30410Nunez</title>
 </head>
 <body>
-    <button id="startBuy"> TO BUY </button>
-    <button id="yourSales"> TO SELL </button>
+
+    <div class="container-fluid text-center align-items-center father">
+
+        <div class="cardFather justify-content-center align-items-center">
+            <div class="row headTitle">
+                <h1>Welcome to <strong class="h1-strong">Xclusive</strong></h1>
+            </div>
+            
+            <div class="row justify-content-around otherBox">
+
+                <h3 class="col-12">What do you want to do?</h3>
+
+                <div class="selectCards col-4 col-sm-12" id="startBuy">
+                    <i class="fal fa-bags-shopping"></i>
+                    <p>
+                        To BUY!
+                    </p>
+                </div>
+
+                <div class="selectCards col-4 col-sm-12" id="yourSales">
+                    <i class="fal fa-money-bill-wave"></i> 
+                    <p>
+                        To SELL!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
 
     <script src="js/tobuy.js"></script>
     <script src="js/forsale.js"></script>
+    <script src="https://kit.fontawesome.com/042ca66def.js" crossorigin="anonymous"></script>
 </body>
 </html>
