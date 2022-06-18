@@ -8,7 +8,7 @@ function toBuy() {
 
     minBid = 10
     yourName = prompt(`"Welcome to Xclusive Shoes, whats your name?"`)
-    shippingZone = prompt(`Where are you from?: (CL - AR - PE - BO - UR)`)
+    shippingZone = prompt(`Where are you from?: (CL - AR - PE - BO - UR)`).toUpperCase()
     yourBid = parseInt(prompt(`${yourName} what is your $Bid for these product?`))
     confirmBid = prompt(`Is $${yourBid} your final Bid? ('YY' / 'NN' to stop )`)
 
@@ -26,10 +26,10 @@ function toBuy() {
         }
 
         yourBid = parseInt(prompt(yourName + " try another $Bid:"))
-        confirmBid = prompt("$" + yourBid + " is your new Bid? (Yes / 'No' to stop)")
+        confirmBid = prompt("$" + yourBid + " is your new Bid? (YY / 'NN' to stop)")
     }
 
-    if (confirm != "No") {
+    if (confirmBid != "NN") {
         shippingCost()
         lastMessage = alert("Final cost $" + finalCost)
         despedida = alert("Thanks for visit us!")
